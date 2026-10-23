@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LinkedIn Job Recency</title>
+    <link rel="icon" type="image/png" href="/icons/icon-32.png" />
+  </head>
+  <body>
+    <main class="popup">
+      <header class="header">
+        <span class="brand-icon" aria-hidden="true">
+          <img src="/icons/linkedin.svg" alt="" width="32" height="32" />
+        </span>
+        <div>
+          <h1>LINKEDIN JOB RECENCY</h1>
+          <p class="tagline">Smarter filters. Fresher opportunities.</p>
+        </div>
+      </header>
+
+      <form id="filter-form" novalidate>
+        <fieldset id="controls" aria-label="Job filters" disabled>
+          <div class="visibility-heading">HIDE JOBS MARKED AS</div>
+          <div class="visibility-toggles" role="group" aria-label="Hide jobs marked as">
+            <button
+              class="choice"
+              type="button"
+              id="hide-applied"
+              role="switch"
+              aria-checked="false"
+            >
+              Applied
+            </button>
+            <button
+              class="choice"
+              type="button"
+              id="hide-viewed"
+              role="switch"
+              aria-checked="false"
+            >
+              Viewed
+            </button>
+          </div>
+          <div class="time-heading">Posted within</div>
+          <div class="presets" role="group" aria-label="Hours ago">
+            <button
+              class="choice"
+              type="button"
+              data-hours="1"
+              aria-label="1 hour"
+              aria-pressed="false"
+            >
+              1h
+            </button>
+            <button
+              class="choice"
+              type="button"
+              data-hours="3"
+              aria-label="3 hours"
+              aria-pressed="true"
+            >
+              3h
+            </button>
+            <button
+              class="choice"
+              type="button"
+              data-hours="6"
+              aria-label="6 hours"
+              aria-pressed="false"
+            >
+              6h
+            </button>
+            <button
+              class="choice"
+              type="button"
+              data-hours="9"
+              aria-label="9 hours"
+              aria-pressed="false"
+            >
+              9h
+            </button>
+            <button
+              class="choice"
+              type="button"
+              data-hours="12"
+              aria-label="12 hours"
+              aria-pressed="false"
+            >
+              12h
+            </button>
+          </div>
+
+          <div class="custom-heading">
+            <label for="custom-hours">Custom</label><span>Decimals allowed</span>
+          </div>
+          <div class="input-wrap">
+            <input
+              id="custom-hours"
+              type="number"
+              step="any"
+              placeholder="e.g. 2.5"
+              inputmode="decimal"
+              aria-describedby="input-error"
+            /><span aria-hidden="true">hours</span>
+          </div>
+          <p class="input-error" id="input-error" role="alert" hidden></p>
+
+          <button class="apply" id="apply" type="submit">
+            <span id="apply-label">Apply</span>
+          </button>
+        </fieldset>
+      </form>
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+      <footer>
+        <span
+          >Built with <span class="heart" aria-label="love">♥</span> by
+          <a
+            href="https://www.linkedin.com/in/sanjeev-s-nyc/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Sanjeev</a
+          ></span
+        >
+        <span class="info-wrap">
+          <button
+            class="info-button"
+            type="button"
+            aria-label="About search filters"
+            aria-describedby="filter-info"
+          >
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 11v6M12 7h.01" />
+            </svg>
+          </button>
+          <span class="tooltip" role="tooltip" id="filter-info"
+            >Uses classic LinkedIn search. Keeps your other filters. Applied and Viewed filters hide
+            loaded jobs marked by LinkedIn.</span
+          >
+        </span>
+      </footer>
+    </main>
+    <script type="module" src="/src/popup.ts"></script>
+  </body>
+</html>
